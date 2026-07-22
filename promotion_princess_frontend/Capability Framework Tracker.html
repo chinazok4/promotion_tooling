@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kubrick Competency Framework</title>
+<!-- Google Fonts, playfair display for headings, dm sans for body text (pivot to georgia, kubrick go-to?)-->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- all styling lives here -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- this is the sticky top bar with kubrick branding -->
+<header class="site-header">
+  <div class="logo-dots">
+    <div class="dot dot-1"></div>
+    <div class="dot dot-2"></div>
+    <div class="dot dot-3"></div>
+    <div class="dot dot-green"></div>
+  </div>
+  <h1>Kubrick Competency Framework</h1>
+  <span class="subtitle">Self-Assessment Tool</span>
+</header>
+
+<!-- PAGE 1: LANDING -->
+<div id="page-landing" class="page active">
+  <div class="landing-card">
+    <p class="eyebrow">Kubrick Group</p>
+    <h2>Role Profile Self-Assessment</h2>
+    <p class="intro">Select your role to view your competency framework, KPIs, and core objectives. You can add self-assessment notes against each area and download a PDF copy for your records.</p>
+    <!-- this is for name input, stored in currentUser in loadProfile() -->
+    <div class="form-field">
+      <label for="input-name">Your Name</label>
+      <input type="text" id="input-name" placeholder="e.g. Dami Bamidele" autocomplete="name">
+    </div>
+    
+    <!-- role selector where option values follow the format "role::path"
+         single path roles use all, duals are split using <optgroup> -->
+    <div class="form-field">
+      <label for="input-role">Your Role</label>
+      <div class="select-wrapper">
+        <select id="input-role">
+          <option value="">— Select your role —</option>
+          <option value="associate::all">Associate</option>
+          <option value="senior associate::all">Senior Associate</option>
+          <option value="consultant::all">Consultant</option>
+          <option value="senior consultant::all">Senior Consultant</option>
+          <optgroup label="Manager">
+            <option value="manager::leadership">Manager — Leadership</option>
+            <option value="manager::expert">Manager — Expert</option>
+          </optgroup>
+          <optgroup label="Senior Manager">
+            <option value="senior manager::leadership">Senior Manager — Leadership</option>
+            <option value="senior manager::expert">Senior Manager — Expert</option>
+          </optgroup>
+          <optgroup label="Associate Director">
+            <option value="associate director::leadership">Associate Director — Leadership</option>
+            <option value="associate director::expert">Associate Director — Expert</option>
+          </optgroup>
+          <option value="director::leadership">Director</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn-primary" onclick="loadProfile()">View My Profile →</button>
+  </div>
+</div>
+
+<!-- PAGE 2: PROFILE -->
+<div id="page-profile" class="page">
+  <!-- hero banner - role title and name populated by loadProfile() -->
+  <div class="profile-hero">
+    <div class="role-info">
+      <h2 id="hero-role"></h2>
+      <div class="user-name" id="hero-name"></div>
+    </div>
+    <div class="path-badges" id="hero-badges"></div>
+  </div>
+  <!-- all sections (kpi, core objective, competency dimension, focus, IOR)
+   are built and injected here by main.js -->
+  <div class="profile-body" id="profile-body"></div>
+
+  <!-- fixed bottom bar with nav/download options -->
+  <div class="download-bar">
+    <button class="btn-back" onclick="goBack()">← Back</button>
+    <span class="hint">Fill in your self-assessment notes above, then download.</span>
+    <div style="display:flex;gap:10px;">
+      <!-- csv download for kpis only-->
+      <button class="btn-download" style="background:var(--kubrick-green);" onclick="downloadCSV()">⬇ Download KPIs (CSV)</button>
+      
+      <!-- pdf download for entire document-->
+      <button class="btn-download" onclick="downloadPDF()">⬇ Download PDF</button>
+    </div>
+  </div>
+</div>
+
+<!-- data.js must load before main.js so all variables are defined when main.js runs 
+    please do not edit main.js unless the data.js structure is modified. otherwise just edit data.js and it populates -->
+<script src="data.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
