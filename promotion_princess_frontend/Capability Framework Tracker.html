@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kubrick Competency Framework</title>
-<!-- Google Fonts, playfair display for headings, dm sans for body text (pivot to georgia, kubrick go-to?)-->
+<title> Competency Framework</title>
+<!-- Google Fonts, playfair display for headings, dm sans for body text (pivot to georgia, go-to?)-->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <!-- all styling lives here -->
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- this is the sticky top bar with kubrick branding -->
+<!-- this is the sticky top bar with branding -->
 <header class="site-header">
   <div class="logo-dots">
     <div class="dot dot-1"></div>
@@ -19,14 +19,14 @@
     <div class="dot dot-3"></div>
     <div class="dot dot-green"></div>
   </div>
-  <h1>Kubrick Competency Framework</h1>
+  <h1>Competency Framework</h1>
   <span class="subtitle">Self-Assessment Tool</span>
 </header>
 
 <!-- PAGE 1: LANDING -->
 <div id="page-landing" class="page active">
   <div class="landing-card">
-    <p class="eyebrow">Kubrick Group</p>
+    <p class="eyebrow">Company</p>
     <h2>Role Profile Self-Assessment</h2>
     <p class="intro">Select your role to view your competency framework, KPIs, and core objectives. You can add self-assessment notes against each area and download a PDF copy for your records.</p>
     <!-- this is for name input, stored in currentUser in loadProfile() -->
@@ -86,7 +86,7 @@
     <span class="hint">Fill in your self-assessment notes above, then download.</span>
     <div style="display:flex;gap:10px;">
       <!-- csv download for kpis only-->
-      <button class="btn-download" style="background:var(--kubrick-green);" onclick="downloadCSV()">⬇ Download KPIs (CSV)</button>
+      <button class="btn-download" style="background:var(-- -green);" onclick="downloadCSV()">⬇ Download KPIs (CSV)</button>
       
       <!-- pdf download for entire document-->
       <button class="btn-download" onclick="downloadPDF()">⬇ Download PDF</button>
