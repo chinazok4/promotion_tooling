@@ -1,4 +1,4 @@
-# Promotion Princess — Kubrick Competency Framework Tool
+# Promotion Princess — Competency Framework Tool
 
 A two-part project that extracts the Kubrick competency framework from a PDF and serves it as an interactive self-assessment web tool.
 
