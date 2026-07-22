@@ -480,7 +480,7 @@ function downloadPDF() {
   win.document.write(`<!DOCTYPE html>
 <html><head>
 <meta charset="UTF-8">
-<title>Kubrick Competency Framework — ${currentUser}</title>
+<title>Competency Framework — ${currentUser}</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   body { font-family: 'DM Sans', sans-serif; background: #fff; color: #1a1a1a; font-size: 11pt; margin: 0; padding: 0; }
